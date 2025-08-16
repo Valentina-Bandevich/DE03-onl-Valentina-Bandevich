@@ -17,30 +17,31 @@ print(a_count, b_count, sep=';')
 # вычисляет их сумму и среднее значение. Программа должна использовать /n
 # циклы для обработки ввода и условные операторы для проверки корректности ввода.
 
-# numbers = []
-# while True:
-#     user_input = input('Введите числа по одному. Для завершения введите 0: ')
-#     if user_input == '0':
-#         break
-#     try:
-#         number = float(user_input)
-#         numbers.append(number)
-#     except ValueError: # c этим блоком пришлось идти за помощью к ИИ. Сложно с этой задачей
-#         print("Некорректный ввод. Пожалуйста, введите число или '0'.") 
+sum_numbers = 0
+count = 0
+print ("Введите числа по одному. Для завершения введите 'stop': ")
+while True:
+    user_input = input('Введите число: ')
+    if user_input == 'stop':
+        if count == '0':
+            print('Некорректный ввод.') 
+        else:   
+            print(f'Сумма введенных чисел: {sum_numbers}')
+            print(f'Среднее значение: {sum_numbers / count}')   
+        break
+    try:
+        number = int(user_input)
+        sum_numbers += number
+        count += 1
+    except ValueError:
+        print("Некорректный ввод. Введите число или 'stop' для завершения.")  
 
-# if numbers:
-#     total = sum(numbers)
-#     average = total / len(numbers) 
-#     print(f'Сумма введенных чисел: {total}')
-#     print(f'Среднее значение: {average}')
-# else:
-#     print('Никаких чисел не было введено.')
 
 # 3. Разработайте программу, которая запрашивает у пользователя число /n
 # и выводит таблицу умножения для этого числа до 10.
 
-# number = int(input('Введите число: '))
-# print(f'таблица умножения для числа {number}:')
-# for i in range(1, 11):
-#     result = number * i
-#     print(f"{number} * {i} = {result}")
+number = int(input('Введите число: '))
+print(f'таблица умножения для числа {number}:')
+for i in range(1, 11):
+    result = number * i
+    print(f"{number} * {i} = {result}")
