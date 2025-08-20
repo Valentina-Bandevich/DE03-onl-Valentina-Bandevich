@@ -1,3 +1,4 @@
+
 """1.Откройте файл example.txt и выведите его содержимое на экран."""
 
 with open(r"python/HW5/example.txt", "r") as file:
