@@ -34,6 +34,9 @@ except NegativeNumberError as e:
 """Написать программу, которая запрашивает у пользователя число и выводит его квадрат.
 Обработать случай, если введено не число.""" 
 
-# try:
-#     number = float(input ('Введите положительное число: '))
-#     print(f"Квадрат числа 
+try:
+    number = float(input ('Введите число: '))
+    sguare = number ** 2
+    print(f"Квадрат числа {number} равен {sguare}")
+except ValueError:
+    print("Ошибка! Введите число")
