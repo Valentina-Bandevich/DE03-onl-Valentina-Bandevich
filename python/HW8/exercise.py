@@ -1,8 +1,9 @@
 
-#import numpy as pd
 """ Загрузите данные из CSV файла """
 
+import numpy as np
 import pandas as pd
+
 df=pd.read_csv(r'python/sales.csv')
 print(df)
 
