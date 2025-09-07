@@ -12,8 +12,7 @@ if response.status_code == 200:
 else:
     print(f"Failed to retrieve data: {response.status_code}")
 
-# df = df.drop_duplicates(subset=['customer_name']) # удаление строк с пропущенными значениями
-
-df_clean = df.dropna ()   # удаление строк с пропущенными значениями
-df_clean.to_csv('Python/HW9/cleaned_data.csv', index = False)   # сохранение в CSV
+df = df.dropna()   # удаление пропущенных значений
+df = df.apply(pd.to_numeric, errors='ignore') # преобразование типов
+df.to_csv('Python/HW9/cleaned_data.csv', index = False)   # сохранение в CSV
 print('Данные сохранены в cleaned_data.csv')
